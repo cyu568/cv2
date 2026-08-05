@@ -30,11 +30,33 @@
         <a href="#teaching">Teaching</a>
       </nav>
 
-      <button class="theme-button" id="themeButton" aria-label="Switch color theme" title="Switch color theme">
-        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.8A8.3 8.3 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
-        </svg>
-      </button>
+      <div class="header-actions">
+        <button class="search-button" id="searchButton" aria-label="Open site search" aria-expanded="false" title="Search this website">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+
+        <button class="theme-button" id="themeButton" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.3 8.3 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form class="site-search" id="siteSearch" role="search">
+        <label class="sr-only" for="searchInput">Search this website</label>
+        <input id="searchInput" type="search" placeholder="Search bio, experience, projects, teaching..." autocomplete="off">
+        <button type="submit" aria-label="Submit search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+        <button type="button" class="search-close" id="searchClose" aria-label="Close search">×</button>
+        <p class="search-message" id="searchMessage" aria-live="polite"></p>
+      </form>
     </div>
   </header>
 

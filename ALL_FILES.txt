@@ -1,10 +1,5 @@
-CLAIRE YU PERSONAL WEBSITE — ALL FILES
+==================== index.html ====================
 
-This document contains the complete contents of index.html, style.css, script.js, and README.md.
-
-============================================================
-FILE 1: index.html
-============================================================
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +32,33 @@ FILE 1: index.html
         <a href="#teaching">Teaching</a>
       </nav>
 
-      <button class="theme-button" id="themeButton" aria-label="Switch color theme" title="Switch color theme">
-        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.8A8.3 8.3 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
-        </svg>
-      </button>
+      <div class="header-actions">
+        <button class="search-button" id="searchButton" aria-label="Open site search" aria-expanded="false" title="Search this website">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+
+        <button class="theme-button" id="themeButton" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.3 8.3 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form class="site-search" id="siteSearch" role="search">
+        <label class="sr-only" for="searchInput">Search this website</label>
+        <input id="searchInput" type="search" placeholder="Search bio, experience, projects, teaching..." autocomplete="off">
+        <button type="submit" aria-label="Submit search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+        <button type="button" class="search-close" id="searchClose" aria-label="Close search">×</button>
+        <p class="search-message" id="searchMessage" aria-live="polite"></p>
+      </form>
     </div>
   </header>
 
@@ -323,9 +340,8 @@ FILE 1: index.html
 </html>
 
 
-============================================================
-FILE 2: style.css
-============================================================
+==================== style.css ====================
+
 :root {
   --background: #ffffff;
   --background-soft: #f7f8fb;
@@ -457,6 +473,7 @@ svg {
 }
 
 .theme-button,
+.search-button,
 .menu-button {
   border: 0;
   background: transparent;
@@ -464,8 +481,15 @@ svg {
   cursor: pointer;
 }
 
-.theme-button {
+.header-actions {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-button,
+.search-button {
   width: 42px;
   height: 42px;
   display: grid;
@@ -473,11 +497,13 @@ svg {
   border-radius: 50%;
 }
 
-.theme-button:hover {
+.theme-button:hover,
+.search-button:hover {
   background: var(--accent-soft);
 }
 
-.theme-button svg {
+.theme-button svg,
+.search-button svg {
   width: 24px;
   height: 24px;
 }
@@ -486,13 +512,103 @@ svg {
   display: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-search {
+  position: absolute;
+  top: calc(var(--header-height) + 10px);
+  right: max(20px, calc((100vw - 1180px) / 2));
+  z-index: 1100;
+  width: min(520px, calc(100vw - 40px));
+  display: none;
+  grid-template-columns: 1fr 46px 42px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-background);
+  box-shadow: var(--shadow);
+}
+
+.site-search.open {
+  display: grid;
+}
+
+.site-search input {
+  min-width: 0;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.site-search input:focus {
+  border-color: var(--accent);
+}
+
+.site-search button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--heading);
+  cursor: pointer;
+}
+
+.site-search button:hover {
+  background: var(--accent-soft);
+}
+
+.site-search button svg {
+  width: 21px;
+  height: 21px;
+}
+
+.search-close {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.search-message {
+  grid-column: 1 / -1;
+  margin: 7px 4px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.search-hit {
+  animation: searchPulse 1.4s ease;
+}
+
+@keyframes searchPulse {
+  0%, 100% { outline: 0 solid transparent; }
+  35% { outline: 4px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+}
+
 .hero {
   position: relative;
   min-height: 520px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85");
+  background-image: url("hero-laptop.png");
   background-position: center;
   background-size: cover;
 }
@@ -826,6 +942,15 @@ svg {
     grid-template-columns: 1fr auto auto;
   }
 
+  .header-actions {
+    gap: 2px;
+  }
+
+  .site-search {
+    right: 14px;
+    width: calc(100vw - 28px);
+  }
+
   .menu-button {
     width: 42px;
     height: 42px;
@@ -939,17 +1064,23 @@ svg {
 }
 
 
-============================================================
-FILE 3: script.js
-============================================================
+==================== script.js ====================
+
 const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 const themeButton = document.getElementById("themeButton");
+const searchButton = document.getElementById("searchButton");
+const siteSearch = document.getElementById("siteSearch");
+const searchInput = document.getElementById("searchInput");
+const searchClose = document.getElementById("searchClose");
+const searchMessage = document.getElementById("searchMessage");
 const navLinks = document.querySelectorAll(".main-nav a");
 const sections = document.querySelectorAll("main section[id]");
 const currentYear = document.getElementById("currentYear");
 
-currentYear.textContent = new Date().getFullYear();
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
 
 menuButton.addEventListener("click", () => {
   const isOpen = mainNav.classList.toggle("open");
@@ -974,6 +1105,62 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("theme", theme);
 });
 
+function openSearch() {
+  siteSearch.classList.add("open");
+  searchButton.setAttribute("aria-expanded", "true");
+  window.setTimeout(() => searchInput.focus(), 50);
+}
+
+function closeSearch() {
+  siteSearch.classList.remove("open");
+  searchButton.setAttribute("aria-expanded", "false");
+  searchMessage.textContent = "";
+}
+
+searchButton.addEventListener("click", () => {
+  if (siteSearch.classList.contains("open")) {
+    closeSearch();
+  } else {
+    openSearch();
+  }
+});
+
+searchClose.addEventListener("click", closeSearch);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeSearch();
+});
+
+siteSearch.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (!query) {
+    searchMessage.textContent = "Enter a word to search.";
+    return;
+  }
+
+  const searchableElements = Array.from(
+    document.querySelectorAll("main section, main article, main h2, main h3, main p, main li")
+  );
+
+  const match = searchableElements.find((element) =>
+    element.textContent.toLowerCase().includes(query)
+  );
+
+  if (!match) {
+    searchMessage.textContent = `No result found for “${searchInput.value.trim()}”.`;
+    return;
+  }
+
+  const target = match.closest("article, section") || match;
+  target.scrollIntoView({ behavior: "smooth", block: "center" });
+  target.classList.remove("search-hit");
+  void target.offsetWidth;
+  target.classList.add("search-hit");
+  searchMessage.textContent = `Showing the first result for “${searchInput.value.trim()}”.`;
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -996,9 +1183,8 @@ const observer = new IntersectionObserver(
 sections.forEach((section) => observer.observe(section));
 
 
-============================================================
-FILE 4: README.md
-============================================================
+==================== README.md ====================
+
 # Claire Yu Personal Website
 
 This folder contains a complete one-page personal website for GitHub Pages.
@@ -1057,3 +1243,8 @@ The hero section uses an online Unsplash image. To use your own image:
 ```css
 background-image: url("hero.jpg");
 ```
+
+
+==================== hero-laptop.png ====================
+
+This image file is included separately in the ZIP and must stay in the same folder as index.html.
