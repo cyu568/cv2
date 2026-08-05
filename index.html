@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claire Yu — aspiring data scientist and statistician.">
+  <title>Claire Yu | Data Scientist & Statistician</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="#home" aria-label="Go to home">Claire Yu</a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <a href="#about">Bio</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
+
+      <button class="theme-button" id="themeButton" aria-label="Switch color theme" title="Switch color theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A8.3 8.3 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content page-width">
+        <p class="eyebrow">HELLO, I'M</p>
+        <h1>Claire Yu</h1>
+        <p class="hero-role">Aspiring Data Scientist <span>|</span> Statistician</p>
+        <p class="hero-summary">
+          I am passionate about applying statistical methods and data-driven insights
+          to solve real-world problems and support informed decision-making.
+        </p>
+
+        <div class="hero-buttons">
+          <!-- Replace cv.pdf with your actual CV filename. -->
+          <a class="button button-white" href="cv.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 2h8l4 4v16H6z"></path>
+              <path d="M14 2v5h5"></path>
+              <path d="M9 13h6M9 17h6"></path>
+            </svg>
+            View CV
+          </a>
+
+          <!-- Replace the URL below with your LinkedIn profile URL. -->
+          <a class="button button-white" href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M8 10v7M8 7.5v.01M12 17v-4a3 3 0 0 1 6 0v4M12 10v7"></path>
+            </svg>
+            LinkedIn
+          </a>
+
+          <!-- Replace the email address below with your real email. -->
+          <a class="button button-white" href="mailto:your.email@example.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="page-width">
+        <div class="section-heading centered-heading">
+          <p class="section-label">ABOUT ME</p>
+          <h2>Who I Am</h2>
+          <p class="section-intro">
+            I have experience in statistical modeling, inference, and data analysis using R and Python.
+            My expertise includes regression analysis, generalized linear models, Monte Carlo simulation,
+            data visualization, and statistical study design. I enjoy turning complex data into clear,
+            practical insights and building models that solve real analytical problems.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20V10h4v10M10 20V4h4v16M16 20v-7h4v7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Statistical Modeling</h3>
+              <p>Regression, GLMs, survival analysis, hypothesis testing, and statistical inference.</p>
+            </div>
+          </article>
+
+          <article class="skill-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Programming</h3>
+              <p>R, Python, SQL, and reproducible analytical workflows for data analysis and modeling.</p>
+            </div>
+          </article>
+
+          <article class="skill-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5M4 19h16M7 15l4-4 3 2 5-6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Data Visualization</h3>
+              <p>Clear and effective visualizations that communicate trends, results, and business insights.</p>
+            </div>
+          </article>
+
+          <article class="skill-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18h6M10 22h4M8.5 14.5A6 6 0 1 1 15.5 14.5c-.9.7-1.5 1.5-1.5 2.5h-4c0-1-.6-1.8-1.5-2.5Z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Problem Solving</h3>
+              <p>Analytical thinking, research design, and evidence-based solutions for complex problems.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="experience">
+      <div class="page-width narrow-width">
+        <div class="section-heading">
+          <p class="section-label">EXPERIENCE</p>
+          <h2>Professional Experience</h2>
+        </div>
+
+        <div class="timeline-list">
+          <article class="information-card">
+            <div class="card-heading">
+              <div>
+                <h3>Statistical Consultant</h3>
+                <p class="company-name">Statistical Consulting Service</p>
+              </div>
+              <p class="date">2024–Present</p>
+            </div>
+            <ul>
+              <li>Supported 15+ research and consulting projects across healthcare, finance, and social sciences.</li>
+              <li>Designed analysis plans using R and Python, including regression models, GLMs, Monte Carlo simulation, and power analysis.</li>
+              <li>Translated technical results into clear recommendations for students, faculty members, and external clients.</li>
+            </ul>
+          </article>
+
+          <article class="information-card">
+            <div class="card-heading">
+              <div>
+                <h3>Actuarial Research Analyst</h3>
+                <p class="company-name">Healthcare and Insurance Research Project</p>
+              </div>
+              <p class="date">2021–2023</p>
+            </div>
+            <ul>
+              <li>Processed and analyzed 100,000+ public health records on cancer and transplant-related conditions using R.</li>
+              <li>Developed mortality and survival models to quantify risk for insurance pricing and underwriting applications.</li>
+              <li>Led a team of five in designing, validating, and reporting actuarial models for premiums and death benefits.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="page-width narrow-width">
+        <div class="section-heading">
+          <p class="section-label">PROJECTS</p>
+          <h2>Selected Projects</h2>
+          <p class="section-description">Projects are displayed in one column, matching the experience section.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div class="card-heading">
+              <div>
+                <p class="project-type">MACHINE LEARNING</p>
+                <h3>Mortgage Loan Repayment Prediction</h3>
+              </div>
+              <p class="date">Python</p>
+            </div>
+            <ul>
+              <li>Processed and analyzed 100,000+ mortgage loan records and evaluated financial and demographic variables.</li>
+              <li>Compared Logistic Regression, Decision Tree, Random Forest, and Support Vector Machine models.</li>
+              <li>Evaluated model performance using confusion matrices, ROC curves, ROC-AUC, and 5-fold cross-validation.</li>
+              <li>Achieved an ROC-AUC of 0.91 with Random Forest and improved predictive performance by 13%.</li>
+            </ul>
+            <p class="tools"><strong>Tools:</strong> Python, Pandas, NumPy, scikit-learn, Matplotlib</p>
+            <a class="text-link" href="#" aria-label="View mortgage loan project">View project →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-heading">
+              <div>
+                <p class="project-type">SURVIVAL ANALYSIS</p>
+                <h3>Patient Survival Outcomes</h3>
+              </div>
+              <p class="date">R</p>
+            </div>
+            <ul>
+              <li>Analyzed patient survival outcomes using Kaplan–Meier estimation and log-rank tests.</li>
+              <li>Built multivariable Cox proportional hazards models to estimate the effects of clinical predictors.</li>
+              <li>Assessed model assumptions and reported hazard ratios with confidence intervals.</li>
+            </ul>
+            <p class="tools"><strong>Tools:</strong> R, survival, survminer, ggplot2</p>
+            <a class="text-link" href="#" aria-label="View survival analysis project">View project →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-heading">
+              <div>
+                <p class="project-type">QUANTITATIVE FINANCE</p>
+                <h3>Monte Carlo Option Pricing</h3>
+              </div>
+              <p class="date">R / Python</p>
+            </div>
+            <ul>
+              <li>Developed Monte Carlo models to price European, Asian, Barrier, Rainbow, and Basket options.</li>
+              <li>Simulated hundreds of thousands of risk-neutral asset-price paths to estimate discounted option values.</li>
+              <li>Applied control variates to reduce simulation variance and improve confidence interval precision.</li>
+            </ul>
+            <p class="tools"><strong>Tools:</strong> R, Python, Monte Carlo simulation, variance reduction</p>
+            <a class="text-link" href="#" aria-label="View Monte Carlo project">View project →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="teaching">
+      <div class="page-width narrow-width">
+        <div class="section-heading">
+          <p class="section-label">TEACHING</p>
+          <h2>Teaching Experience</h2>
+        </div>
+
+        <div class="timeline-list">
+          <article class="information-card">
+            <div class="card-heading">
+              <div>
+                <h3>Teaching Assistant — Calculus</h3>
+                <p class="company-name">University Department of Mathematics and Statistics</p>
+              </div>
+              <p class="date">2024–Present</p>
+            </div>
+            <ul>
+              <li>Facilitated weekly discussion sections covering limits, derivatives, integrals, and applications.</li>
+              <li>Provided one-on-one academic support and exam preparation during office hours.</li>
+              <li>Collaborated with instructors on lesson plans, grading standards, student progress, and course coordination.</li>
+            </ul>
+          </article>
+
+          <article class="information-card">
+            <div class="card-heading">
+              <div>
+                <h3>Mathematics and English Tutor</h3>
+                <p class="company-name">Private Tutoring</p>
+              </div>
+              <p class="date">2020–2023</p>
+            </div>
+            <ul>
+              <li>Designed personalized lessons and practice exercises based on individual learning needs.</li>
+              <li>Tracked progress through regular assessments and provided clear feedback to students and parents.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="page-width contact-content">
+        <div>
+          <p class="section-label">GET IN TOUCH</p>
+          <h2>Let’s Connect</h2>
+          <p>I am open to opportunities in data science, statistics, analytics, and research.</p>
+        </div>
+        <a class="button button-white" href="mailto:your.email@example.com">Contact Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-content">
+      <p>© <span id="currentYear"></span> Claire Yu. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
